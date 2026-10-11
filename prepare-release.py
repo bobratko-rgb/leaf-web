@@ -1,17 +1,17 @@
-import concurrent.futures, hashlib, json, pathlib, re, urllib.request
+import hashlib, io, json, pathlib, re, urllib.request, zipfile
 root = pathlib.Path("dist")
 root.mkdir(exist_ok=True)
-origin = "https://leaf-plant-journal.workspace-907772.chatgpt.site/"
+archive_url = "https://github.com/bobratko-rgb/leaf-web/releases/download/v0.1.0-web/leaf-web-pwa.zip"
+data = urllib.request.urlopen(archive_url, timeout=90).read()
+assert hashlib.sha256(data).hexdigest() == "ab9b60d6042f0b0939c60240a6410aba2ed43616ca40565a9dadd3062132d4fa", "Archive checksum mismatch"
 manifest = json.loads(pathlib.Path("release-files.json").read_text())
-def download(item):
-    target = root / item["path"]
-    target.parent.mkdir(parents=True, exist_ok=True)
-    data = urllib.request.urlopen(origin + item["path"], timeout=90).read()
-    if hashlib.sha256(data).hexdigest() != item["sha256"]:
-        raise RuntimeError("Release checksum mismatch: " + item["path"])
-    target.write_bytes(data)
-with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
-    list(pool.map(download, manifest))
+with zipfile.ZipFile(io.BytesIO(data)) as archive:
+    for item in manifest:
+        payload = archive.read(item["path"])
+        assert hashlib.sha256(payload).hexdigest() == item["sha256"], "Asset checksum mismatch: " + item["path"]
+        target = root / item["path"]
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(payload)
 index = root / "index.html"
 html = index.read_text()
 assert '<base href="/">' in html

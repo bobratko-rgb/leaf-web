@@ -1,9 +1,9 @@
 import hashlib, io, json, pathlib, re, urllib.request, zipfile
 root = pathlib.Path("dist")
 root.mkdir(exist_ok=True)
-archive_url = "https://github.com/bobratko-rgb/leaf-web/releases/download/v0.2.0-journal/leaf-web-pwa.zip"
+archive_url = "https://github.com/bobratko-rgb/leaf-web/releases/download/v0.3.0-care/leaf-web-pwa.zip"
 data = urllib.request.urlopen(archive_url, timeout=90).read()
-assert hashlib.sha256(data).hexdigest() == "b1642cd2243ed7b3f933c747778782f06815858498b3cd70c5a457542205956d", "Archive checksum mismatch"
+assert hashlib.sha256(data).hexdigest() == "9beb192d8f9c928f6eff9fa03d251f0e3c1f400e8f7a645536c3b31102c4df1f", "Archive checksum mismatch"
 manifest = json.loads(pathlib.Path("release-files.json").read_text())
 with zipfile.ZipFile(io.BytesIO(data)) as archive:
     for item in manifest:

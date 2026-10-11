@@ -16,12 +16,12 @@
     "sha256": "cd7e03645bc44b2dd47b7cb626f51c4ecbf55a197ab77241628b47ac165fbe21"
   },
   {
-    "path": "assets/NOTICES",
-    "sha256": "5214f54c709e58f8f2a191e329d309b4802a54905450f0607c0449ce430792bb"
+    "path": "assets/fonts/MaterialIcons-Regular.otf",
+    "sha256": "031eeec18936ad199094b8c9e9427aaa092c6377263e90a69f97853f2ee24ef4"
   },
   {
-    "path": "assets/fonts/MaterialIcons-Regular.otf",
-    "sha256": "4388f674890b0803e164341b88cf0843428c1c47834651131e3c9350fb68a9af"
+    "path": "assets/NOTICES",
+    "sha256": "5214f54c709e58f8f2a191e329d309b4802a54905450f0607c0449ce430792bb"
   },
   {
     "path": "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
@@ -68,12 +68,12 @@
     "sha256": "eab8f0df5027670550425a66f06bf537d99032a50b2a2fb176e3f82ef50cce3c"
   },
   {
-    "path": "canvaskit/skwasm_heavy.js",
-    "sha256": "811359f46a22b5c1aab6667d167e1fa479275a09cb6eba9cbfbb548f4462313f"
-  },
-  {
     "path": "canvaskit/skwasm_heavy.js.symbols",
     "sha256": "1418b55dbb2fc3172e36aca16c32437912acc9d3ae3b270cbc4c9080000d8bfb"
+  },
+  {
+    "path": "canvaskit/skwasm_heavy.js",
+    "sha256": "811359f46a22b5c1aab6667d167e1fa479275a09cb6eba9cbfbb548f4462313f"
   },
   {
     "path": "canvaskit/skwasm_heavy.wasm",
@@ -84,16 +84,16 @@
     "sha256": "7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015"
   },
   {
-    "path": "flutter.js",
-    "sha256": "e3081edda6d2ee9064d700a98f7ba8bb634aea05d735980272ff8d2179e48016"
-  },
-  {
     "path": "flutter_bootstrap.js",
-    "sha256": "830ac63fb2f4e3e0464a8d07e43116895fb3dc68d3d37e631190b4790f28cfac"
+    "sha256": "dcf4dc83a58e5e476fa0886ef4da35fdb97355a73c30b36944f64de0c23fee95"
   },
   {
     "path": "flutter_service_worker.js",
-    "sha256": "481249d76907e0bd533eaaadefaaa4317270df6c9707c0a6ebed0878edc43d36"
+    "sha256": "ee5a3c4c60de80bf5edc4b479655d1003600df8784249e934847e0ab3d53092f"
+  },
+  {
+    "path": "flutter.js",
+    "sha256": "e3081edda6d2ee9064d700a98f7ba8bb634aea05d735980272ff8d2179e48016"
   },
   {
     "path": "icons/Icon-192.png",
@@ -121,7 +121,7 @@
   },
   {
     "path": "main.dart.js",
-    "sha256": "8e080e2dd5816fc35b2b61e2a8ed9d723b385a03806af89f47b40f5231f634b6"
+    "sha256": "555c1f00735cc7cfc79c735fa6eb5582171e65939ddcbfb4c136c9e58476e2c4"
   },
   {
     "path": "manifest.json",
